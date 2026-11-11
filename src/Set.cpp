@@ -1,10 +1,10 @@
-#include "Set.h"
+#include "../headers/Set.h"
 
 void SETINIT(setData* set) {
     set->capacity = 16;
     set->count = 0;
     set->buckets = new FNode*[set->capacity];
-    for(int i = 0; i <= set->capacity; i++) {
+    for(int i = 0; i < set->capacity; i++) {
         set->buckets[i] = nullptr;
     }
 }
@@ -92,7 +92,7 @@ bool SETDEL(setData* set, const string& str) {
 }
 
 void SETCLEAR(setData* set) {
-    for (int i = 0; i < (set->capacity) - 1; i++) {
+    for (int i = 0; i < set->capacity; i++) {
         while(set->buckets[i] != nullptr) {
             FDELHEAD(set->buckets[i]);
         }

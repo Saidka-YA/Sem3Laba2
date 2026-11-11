@@ -1,4 +1,4 @@
-#include "Array.h"
+#include "../headers/Array.h"
 
 void MINIT(MArray* arr)
 {

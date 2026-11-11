@@ -1,4 +1,4 @@
-#include "Huffman.h"
+#include "../headers/Huffman.h"
 
 void EncodeHuffman::buildTree() {
     int freg[256] {};
@@ -41,9 +41,8 @@ void EncodeHuffman::buildTree() {
 }
 
 int EncodeHuffman::takeMin(MArray* freeNodes) {
-    int lastIndex = MLENGTH(freeNodes) - 1;
-    int nodeID = stoi(MGET(freeNodes, lastIndex));
-    MDEL(freeNodes, lastIndex);
+    int nodeID = stoi(MGET(freeNodes, MLENGTH(freeNodes) - 1));
+    MDEL(freeNodes, MLENGTH(freeNodes) - 1);
     return nodeID;
 }
 
@@ -128,7 +127,10 @@ string EncodeHuffman::decode(string bits)
 }
 
 EncodeHuffman::EncodeHuffman(string text) 
-    : input(text), root(nullptr), nodeCount(0) {}
+    : input(text), root(nullptr), nodeCount(0) {
+        buildTree();
+        buildCodes(root, "");
+    }
 
 void EncodeHuffman::printCodes()
 {

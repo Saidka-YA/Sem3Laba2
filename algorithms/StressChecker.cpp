@@ -1,4 +1,4 @@
-#include "StressChecker.h"
+#include "../headers/StressChecker.h"
 
 #include <algorithm>
 #include <sstream>

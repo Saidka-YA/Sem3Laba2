@@ -1,5 +1,5 @@
-#include "postfixConverter.h"
-#include "stack.h"
+#include "../headers/postfixConverter.h"
+#include "../headers/stack.h"
 using namespace std;
 
 bool postfixConverter::isOperator(char symbol){
